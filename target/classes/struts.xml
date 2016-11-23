@@ -20,7 +20,7 @@
 		<!--  设置默认拦截器栈-->
 		<default-interceptor-ref name="login-stack"/>
 		
-		<!--配置拦截器的全局结果集  -->
+		<!--配置拦截器的全局结果集 哈哈 -->
 		<global-results >
 			<result name="login">/index.jsp</result>
 		</global-results>
