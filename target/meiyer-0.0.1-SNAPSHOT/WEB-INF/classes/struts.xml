@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<package name="needlogin" extends="json-default">
+		<interceptors>
+			<!-- 注册拦截器 -->
+			<interceptor name="login" class="com.back4me.meiyer.web.intercepter.LoginIntercepter"/>
+			<!-- 定义新的拦截器栈 -->
+			<interceptor-stack name="login-stack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="login"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!--  设置默认拦截器栈-->
+		<default-interceptor-ref name="login-stack"/>
+		
+		<!--配置拦截器的全局结果集  -->
+		<global-results >
+			<result name="login">/index.jsp</result>
+		</global-results>
+		
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+		<!-- 需要进行权限控制的页面访问 -->
+		<!-- <action name="page_*">
+			<result type="dispatcher">/WEB-INF/pages/{1}.jsp</result>
+		</action> -->
+		
+		<action name="user_*"  class="UserAction"  method="{1}">
+			<result name="editsuccess" type="json">
+				<param name="root">map</param>
+			</result>
+		</action>
+		
+	</package>
+	
+	<package name="nologin" extends="struts-default">
+		<action name="login" class="loginAction" >
+			<result name="input">/login.jsp</result>
+			<result type="dispatcher">/WEB-INF/pages/index.jsp</result>
+		</action>
+		<action name="page_*">
+			<result type="dispatcher">/WEB-INF/pages/{1}.jsp</result>
+		</action>
+	</package>
+
+</struts>
