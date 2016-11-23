@@ -23,7 +23,7 @@
 		innit();/* 实现两边和中间导航动态 */
 
 	});
-
+	
 	function innit() {
 		$("#leftDiv").css({
 			"position" : "absolute",
@@ -108,7 +108,7 @@
 		<div style="height: 25px; padding-right: 180px; padding-top: 10px">
 			<c:if test="${empty user}">
 				<a onclick="javascript:window.location.href='register.jsp'">注册</a>
-				<a onclick="login()">登录</a>
+				<a onclick="login()">登录meiyerlove</a>
 			</c:if>
 			<c:if test="${not empty user}">
 				<h1>欢迎你，，登录</h1>
