@@ -108,7 +108,7 @@
 		<div style="height: 25px; padding-right: 180px; padding-top: 10px">
 			<c:if test="${empty user}">
 				<a onclick="javascript:window.location.href='register.jsp'">注册</a>
-				<a onclick="login()">登录meiyerlove</a>
+				<a onclick="login()">登录</a>
 			</c:if>
 			<c:if test="${not empty user}">
 				<h1>欢迎你，，登录</h1>

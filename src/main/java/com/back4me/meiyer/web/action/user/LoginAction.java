@@ -14,7 +14,7 @@ public class LoginAction extends BaseAction implements ModelDriven<Userinfo> {
 
 	private Userinfo user = new Userinfo();
 
-	@Override
+
 	public Userinfo getModel() {
 
 		return user;

@@ -10,7 +10,7 @@ import com.back4me.meiyer.utils.MD5Utils;
 
 public class UserServiceImpl extends BaseService implements Userservice{
 
-	@Override
+	
 	public Userinfo login(Userinfo user) {
 		List<Userinfo> userlist = UserDao.findNameQuery("User.login", user.getUsername(),MD5Utils.md5(user.getPassword()));
 		if (!userlist.isEmpty()){
@@ -21,7 +21,7 @@ public class UserServiceImpl extends BaseService implements Userservice{
 			
 	}
 
-	@Override
+	
 	public void editPassword(Userinfo user) {
 		Userinfo user2 = UserDao.queryById(user.getId());
 		user2.setPassword(MD5Utils.md5(user.getPassword()));	

@@ -17,25 +17,25 @@ public class CommentDaoImpl<T> extends HibernateDaoSupport implements CommentDao
 		this.classname = classname;
 	}
 
-	@Override
+	
 	public void save(T obj) {
 		this.getHibernateTemplate().save(obj);
 		
 	}
 
-	@Override
+	
 	public void delect(T obj) {
 		this.getHibernateTemplate().delete(obj);
 		
 	}
 
-	@Override
+	
 	public void update(T obj) {
 		this.getHibernateTemplate().update(obj);
 		
 	}
 
-	@Override
+	
 	public T queryById(Serializable id) {
 		Class<?> clazz=null;
 		try {
@@ -47,19 +47,19 @@ public class CommentDaoImpl<T> extends HibernateDaoSupport implements CommentDao
 	
 	}
 
-	@Override
+	
 	public List<T> findAll() {
 		
 		return this.getHibernateTemplate().find("from "+classname); //hql≤È—Ø
 	}
 
-	@Override
+	
 	public List<T> findNameQuery(String queryNmae, Object... value) {
 		
 		return this.getHibernateTemplate().findByNamedQuery(queryNmae,value);
 	}
 
-	@Override
+	
 	public List<T> findByCriteria(DetachedCriteria detachedCriteria) {
 		
 		return this.getHibernateTemplate().findByCriteria(detachedCriteria);
