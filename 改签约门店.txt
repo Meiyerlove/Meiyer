@@ -1,0 +1,13 @@
+select a.contract_branch,a.owning_branch,a.manage_branch from aps.tm_app_main a where a.app_no='20161021110000347312';
+
+select * from aps.tm_adp_org a where a.org_code='01080080009100163';
+
+select * from aps.tm_adp_org a where a.org_name like '石家庄中山路营业部';
+
+update aps.tm_app_main a set a.contract_branch='01070077005000101',a.manage_branch='01070077005000101' where a.app_no='20161021110000347312'
+
+
+
+select * from aps.act_ru_task a join aps.act_ru_execution b on  a.proc_inst_id_=b.proc_inst_id_ where b.business_key_ ='20161021110000347312'
+
+update  aps.act_ru_task a  set a.assignee_='' where a.id_=26891862
