@@ -1,2 +1,0 @@
-# Meiyer
-MeiYer_GROP
